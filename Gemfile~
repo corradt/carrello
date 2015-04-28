@@ -31,8 +31,6 @@ gem 'twitter-bootstrap-rails', '~> 3.2.0'
 # gem 'unicorn'
 gem "font-awesome-rails"
 
-gem 'puma'
-
 gem 'rails_12factor', group: :production
 
 # Use Capistrano for deployment
