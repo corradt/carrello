@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<% @cart.ordered_products.each do |item| %>
+<!-- START_HIGHLIGHT -->
+
+  <tr >
+    <td><%= item.product.title %> </td>
+    <td><%= item.product.price %></td>
+    <td><%= item.quantity %></td>
+    <td><%= item.product.price * item.quantity %> </td>
+    <td><%= link_to "Delete",ordered_products_path(item) %> </td>
+  </tr>
+
+<% end %>
+
+<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%= link_to 'Back', carts_path %>

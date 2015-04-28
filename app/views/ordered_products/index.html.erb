@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Ordered Products</h1>
+<div class="row">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Quantity</th>
+      <th>Product</th>
+      <th>Price per unit</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+<% total=0 %>
+  <tbody>
+    
+    <% @ordered_products.each do |ordered_product| %>
+      <tr>
+        <td>
+          <%= best_in_place ordered_product, :quantity, tabindex: "1" %>
+        </td>
+        <td><%= ordered_product.product.title %></td>
+        
+        <td><%= ordered_product.product.price %></td>
+        <td> <%= ordered_product.product.id %></td>
+        <% total += ordered_product.product.price * ordered_product.quantity %>
+        <td><%= link_to 'X', ordered_product, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %></td>
+      </tr>
+    <% end %>
+
+
+
+    
+  </tbody>
+  <tr><%= link_to 'Empty cart', @cart, method: :delete,class:"btn btn-warning" %>
+<%= link_to 'Back', root_path, class:"btn btn-primary" %> </tr>
+</table>
+<tr><h3>Euro<div class="total"> <%= total %> </div></h3></tr>
+
+
+</div>
+<br>
+
+<script>
+  // now here will override the behaviour of bind, pratically when we get an response of success by ajax, //this response will be generate when after clicking on the quantity field by best_in_place everything //is successfull than we want to pass the total variable created in update located in the controller //ordered_products_controller
+
+  $('.best_in_place').bind("ajax:success", function (event, data) { 
+    // data parameter contains the values passed to update.json.jbuilder through the update function //located in the controller ordered_products_controller
+    var returned_data = JSON.parse(data); // of course before we need to parse the data
+    $('.total').html(returned_data.total); //#total is the id of the div where we want to display our variable got
+  });
+</script>

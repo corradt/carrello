@@ -1,0 +1,7 @@
+I"}(function() {
+  jQuery(function() {
+    return $('.best_in_place').bind("ajax:ok", location.reload());
+  });
+
+}).call(this);
+:ET
