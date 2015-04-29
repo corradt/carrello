@@ -31,7 +31,7 @@ gem 'twitter-bootstrap-rails', '~> 3.2.0'
 # gem 'unicorn'
 gem "font-awesome-rails"
 
-#gem 'puma'
+gem 'puma'
 
 group :production do 
 	gem 'rails_12factor'
