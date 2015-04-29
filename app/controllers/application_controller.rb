@@ -24,6 +24,6 @@ class ApplicationController < ActionController::Base
       @total_items=qty
     end
 
-    helper_method :totItems
+    
 
 end

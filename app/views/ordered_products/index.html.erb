@@ -22,7 +22,7 @@
         <td><%= ordered_product.product.title %></td>
         
         <td><%= ordered_product.product.price %></td>
-        <td> <%= ordered_product.product.id %></td>
+        
         <% total += ordered_product.product.price * ordered_product.quantity %>
         <td><%= link_to 'X', ordered_product, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %></td>
       </tr>
