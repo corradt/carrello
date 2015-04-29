@@ -17,11 +17,13 @@ class ApplicationController < ActionController::Base
     end
 
     def init_tot_items
-      qty=0
-      set_cart.ordered_products.each do |item|
-        qty += item.quantity
+      if user_signed_in?
+        qty=0
+        set_cart.ordered_products.each do |item|
+          qty += item.quantity
+        end
+        @total_items=qty
       end
-      @total_items=qty
     end
 
     
