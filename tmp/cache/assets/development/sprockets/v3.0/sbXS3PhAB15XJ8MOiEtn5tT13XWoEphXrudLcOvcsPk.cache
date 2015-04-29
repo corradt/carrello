@@ -1,9 +1,0 @@
-I"’(function() {
-  jQuery(function() {
-    return $('.best_in_place').best_in_place({
-      success: location.reload()
-    });
-  });
-
-}).call(this);
-:ET

@@ -41,12 +41,15 @@ class OrderedProductsController < ApplicationController
           ordered_product=@cart.ordered_products.find(params[:id])
           ordered_product.update_attribute(:quantity,quantity)
           @total=0
-          @qty=0
+          @total_items=0
           @cart.ordered_products.each do |ordered_product|
             @total += ordered_product.product.price * ordered_product.quantity
-            @qty += ordered_product.quantity
+            
+            @total_items += ordered_product.quantity
+            
+            
           end
-
+          
           render :update
         rescue  ArgumentError => e
           

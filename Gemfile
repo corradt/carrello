@@ -5,7 +5,7 @@ ruby "2.2.0"
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
-gem 'pg'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -31,10 +31,12 @@ gem 'twitter-bootstrap-rails', '~> 3.2.0'
 # gem 'unicorn'
 gem "font-awesome-rails"
 
-gem 'puma'
+#gem 'puma'
 
-gem 'rails_12factor', group: :production
-
+group :production do 
+	gem 'rails_12factor'
+	gem 'pg'
+end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'simple_form', '~> 3.1.0'
@@ -52,6 +54,7 @@ group :development, :test do
   gem 'spring'
   gem 'pry-byebug'
   gem 'byebug'
+  gem 'sqlite3'
 end
 
 # add gem to click over text

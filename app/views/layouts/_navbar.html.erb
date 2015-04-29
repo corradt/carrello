@@ -37,7 +37,7 @@
       </form>
       <% if user_signed_in? %>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="<%= ordered_products_url %>"><i class="fa fa-shopping-cart fa-lg"></i></a></li>
+        <li><a href="<%= ordered_products_url %>"><i class="fa fa-shopping-cart fa-lg"><div id="total_items"><%= @total_items %></div></i></a></li>
         
         <li class="dropdown">
 
