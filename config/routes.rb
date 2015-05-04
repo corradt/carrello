@@ -1,21 +1,19 @@
 Rails.application.routes.draw do
   post '/rate' => 'rater#create', :as => 'rate'
+  
   resources :staff_members
 
   get 'pages/home'
 
   get 'pages/contacts'
 
-  devise_for :users
-  resources :products
+  devise_for :users  
   resources :store
   
 
   #resources :orders,controller: 'ordered_products', as: 'ordered_products'
+      
   
-  resources :ordered_products
-    
-  resources :carts
 
  
   # The priority is based upon order of creation: first created -> highest priority.

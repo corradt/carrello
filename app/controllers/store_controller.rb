@@ -1,5 +1,5 @@
 class StoreController < ApplicationController
 	def index
-		@products=Product.all
+		@staff_members = StaffMember.all
 	end
 end

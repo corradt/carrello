@@ -31,6 +31,8 @@ gem 'twitter-bootstrap-rails', '~> 3.2.0'
 # gem 'unicorn'
 gem "font-awesome-rails"
 
+gem "paperclip", "~> 4.2"
+
 gem 'ratyrate'
 
 gem 'puma'
@@ -48,6 +50,7 @@ gem 'devise'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'dotenv-rails'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

@@ -1,26 +1,27 @@
 <div class="row">
 
-<% @products.in_groups_of(3, false).each do |group| %>
+<% @staff_members.in_groups_of(3, false).each do |group| %>
   <div class='row'>
 
-    <% group.each do |product| %>
+    <% group.each do |staff_member| %>
     
     <div class='col-md-4'>
 
         <div class="thumbnail">
-
+          <%= image_tag staff_member.image.url(:thumb) %>
+                  <%= staff_member.image.url(:thumb) %>    
                <div class="caption">
 
-        <h3 ><%= product.title %> </h3>
-         <p ><%= product.decription %> </p>
-        <%= product.price %>
+        <h3 ><%= staff_member.fullname %> </h3>
+         
+        <%= staff_member.role %>
        
 
 
-         <%= form_tag ordered_products_path(product_id: product) do %>
-                <div class="text-center"><%= text_field_tag :quantity, params[:quantity]=1,size:"3" %>
-                <%= submit_tag 'Add to cart', class: "btn btn-primary" %> </div>
-              <% end %>
+         
+                <div class="text-center">
+                  <%= link_to "Vote", staff_member_path(staff_member),:class => "btn btn-success align-center" %>
+             
 
                 </div> <!-- end caption-->
            

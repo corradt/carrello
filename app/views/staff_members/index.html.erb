@@ -16,7 +16,7 @@
     <% @staff_members.each do |staff_member| %>
       <tr>
         <td><%= staff_member.fullname %></td>
-        <td><%= staff_member.photo %></td>
+        <td><%= image_tag staff_member.image.url(:original), class: "img-responsive" %></td>
         <td><%= staff_member.role %></td>
         <td><%= link_to 'Show', staff_member %></td>
         <td><%= link_to 'Edit', edit_staff_member_path(staff_member) %></td>
