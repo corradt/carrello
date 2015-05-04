@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fullname:</strong>
+  <%= @staff_member.fullname %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @staff_member.photo %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @staff_member.role %>
+</p>
+
+
+
+<div class="row">
+  <div class="small-2 large-2 columns">
+    <%= imdb_style_rating_for @staff_member, current_user%>
+  </div>
+  <br>
+  <div class="small-2 large-4 columns">
+    <% if current_user %>
+      Smiling: <%= rating_for @staff_member, "smiling" %>
+      <br>
+      Kindness: <%= rating_for @staff_member, "kindness" %>
+      <br>
+      Friendly: <%= rating_for @staff_member, "friendly" %>
+      <br>
+      Professional: <%= rating_for @staff_member, "professional" %>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_staff_member_path(@staff_member) %> |
+<%= link_to 'Back', staff_members_path %>

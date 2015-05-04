@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
+  resources :staff_members
+
   get 'pages/home'
 
   get 'pages/contacts'
