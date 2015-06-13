@@ -32,6 +32,8 @@ gem 'twitter-bootstrap-rails', '~> 3.2.0'
 gem "font-awesome-rails"
 
 gem 'puma'
+gem "paperclip", "~> 4.2"
+gem 'aws-sdk', '< 2.0'
 
 group :production do 
 	gem 'rails_12factor'

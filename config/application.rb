@@ -23,6 +23,17 @@ module Carr
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.assets.initialize_on_precompile = false
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.paperclip_defaults = {
+        storage: :s3,
+        s3_host_name: "s3-us-west-2.amazonaws.com",
+        s3_credentials: {
+            bucket: ENV['S3_BUCKET'],
+            access_key_id: ENV['access_key_id'],
+            secret_access_key: ENV['secret_access_key']
+        }
+    }
+
   end
 
 end
